@@ -1,0 +1,5 @@
+restaurant,address,city,state,zip,phone,url,cuisine,price_range
+Dragonfly Sushi,201 SE 2nd Ave,Gainesville,FL,32601,352-371-3359,http://www.dragonflyrestaurants.com/gainesville-florida/,sushi,$$$
+Mildred's Big City Food,3445 W University Ave,Gainesville,FL,32607,352-371-1711,http://www.mildredsbigcityfood.com/,american,$$$
+Blue Water Bay,319 State Road 26,Melrose,FL,32666,352-475-1928,http://www.thebluewaterbay.com/,seafood,$$$
+Blue Highway Pizza,204 NE US Highway 441,Micanopy,FL,32667,352-466-0062,http://www.bluehighwaypizza.com/,pizza,$$
