@@ -2,8 +2,8 @@
 
 This is a Flask app with:
 
-    * An unfinished form, and
-    * An unfinished function
+* An unfinished form, and
+* An unfinished function
 
 &mdash; both in the first route in the app.
 
@@ -29,7 +29,7 @@ python app.py
 
 The form doesn't work yet, but click the link to the restaurants page and you'll see a table listing local restaurants.
 
-**The goal of the exercise** is for you to modify the file *app.py* so that the form (generated in the first route, with the function `index()`) will write complete data for new restaurants into the file *restaurants.csv*.
+**The goal of the exercise** is for you to modify the file *app.py* so that the form will write complete data for new restaurants into the file *restaurants.csv*.
 
 ## Complete the exercise
 
