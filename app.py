@@ -1,36 +1,39 @@
 from flask import Flask, render_template, redirect, url_for
-from flask_bootstrap import Bootstrap
-from flask_wtf import FlaskForm
+from flask_bootstrap import Bootstrap5
+
+from flask_wtf import FlaskForm, CSRFProtect
 from wtforms import StringField, SubmitField
-from wtforms.validators import Required
+from wtforms.validators import DataRequired, Length
+
 import csv
 
+
 app = Flask(__name__)
-app.config['DEBUG'] = True
-
 # Flask-WTF requires an enryption key - the string can be anything
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.secret_key = 'tO$&!|0wkamvVia0?n$NqIRVWOG'
 
-# Flask-Bootstrap requires this line
-Bootstrap(app)
-
+# Bootstrap-Flask requires this line
+bootstrap = Bootstrap5(app)
+# Flask-WTF requires this line
+csrf = CSRFProtect(app)
 
 # ---------------------------------------------------------------------------
 # with Flask-WTF, each web form is represented by a class
 # "RestForm" can be changed; "(FlaskForm)" cannot
 # see the route for "/" to see how this is used
 class RestForm(FlaskForm):
-    restaurant = StringField('Restaurant name', validators=[Required()])
+    restaurant = StringField('Restaurant name', validators=[DataRequired(), Length(10, 50)])
     submit = SubmitField('Submit')
 
 # Exercise:
-# add: address, city, state, zip, phone, url, cuisine, price_range
+# above, in the class, add new form controls for: 
+# address, city, state, zip, phone, url, cuisine, price_range
 # make price_range a select element with choice of $ to $$$$
 # make all fields required except submit
 # ---------------------------------------------------------------------------
 
 
-# all Flask routes below
+# all Flask routes are below
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -52,4 +55,5 @@ def restaurants():
 
 # keep this as is
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run(host='0.0.0.0', port=4999, debug=True)
