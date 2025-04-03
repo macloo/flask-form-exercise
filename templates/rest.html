@@ -1,10 +1,4 @@
-{% extends 'bootstrap/base.html' %}
-
-{% block styles %}
-{{ super() }}
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-{% endblock %}
-
+{% extends 'base.html' %}
 
 {% block title %}
 Restaurants
@@ -13,13 +7,14 @@ Restaurants
 
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
+
+<div class="container mt-5">
+	<div class="row">
+	  <div class="col-lg-10 col-sm-12 mx-auto">
 
       <h1>Restaurants</h1>
 
-	  <!-- using Bootstrap 3 table classes -->
+	  <!-- using Bootstrap table classes -->
 	  <!-- we loop over a list of lists, rests - derived from a csv file
    			first rows, then items in each row
 			to make an HTML table -->

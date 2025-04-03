@@ -1,15 +1,6 @@
-{% extends 'bootstrap/base.html' %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
 
-{% block styles %}
-{{ super() }}
-	<!-- super() is Jinja2 command to add this without deleting what is
-		 already in base.html in the styles block - very important! -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-{% endblock %}
-
-
-<!-- inserts title into bootstrap/base.html -->
 {% block title %}
 Add New Restaurant
 {% endblock %}
@@ -17,9 +8,11 @@ Add New Restaurant
 
 {% block content %}
 
-<div class="container">
+
+<div class="container mt-5">
   <div class="row">
-    <div class="col-sm-12 col-md-8">
+    <div class="col-lg-8 col-sm-12 mx-auto">
+
 
       <h1>Enter a new restaurant into the database</h1>
 
@@ -27,7 +20,7 @@ Add New Restaurant
 
 	  <!-- form will appear below -->
 
-      {{ wtf.quick_form(form) }}
+      {{ render_form(form) }}
 
 	  <p class="space-above"><a href="{{ url_for('restaurants') }}">See all restaurants</a></p>
 
