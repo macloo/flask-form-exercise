@@ -13,7 +13,3 @@ Thumbs.db
 # folders to be ignored
 env/
 __pycache__/
-
-# other
-restaurants.xlsx
-app2.py
